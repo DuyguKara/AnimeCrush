@@ -1,0 +1,208 @@
+html {
+    font-family: "Playwrite HR Lijeva", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+body {
+    background-image:url("../assests/backgorund.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover; /* bunu ve alttakini */
+    background-attachment: fixed; /* bunu ekleyince sayfanın tamamını kapladı. */
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 5%;
+    align-items: center;
+    width: 100%;
+}
+
+header > div {
+    width: 60%;
+    height: 45vh;
+    background-image: url("../assests/cloud.png");
+    background-position: center center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    padding: 9rem;
+    color: black;
+}
+
+.form-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 10px 10px 20px rgba(255, 105, 180), -10px -10px 20px rgba(255, 105, 180), 25px 25px 40px rgba(255, 255, 0), -25px -25px 40px rgba(255, 255, 0);
+    padding: 5rem;
+    margin: 4rem 16rem;
+    border-radius: 25px;
+    background-color: rgba(250, 235, 215, 0.674);
+    gap: 7rem;
+}
+
+button {
+    border-radius: 8px;
+    background-color: white;
+    padding: 1.5rem 4rem;
+    border: none;
+    font-family: "Playwrite HR Lijeva", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: large;
+}
+
+button:hover {
+    background-color: rgba(255, 255, 0, 0.578);
+    cursor: pointer;
+}
+
+select {
+    border-radius: 8px;
+    padding: 5px 4rem;
+    font-family: cursive;
+    border: none;
+    margin: 1rem;
+    font-size: large;
+}
+
+@media screen and (max-width: 720px) {
+    h1 {
+        text-align: center;
+        padding: 3rem;
+        font-size: 30px;
+    }
+
+    header > div {
+        width: 90%;
+        height: 45vh;
+    }
+
+    .form-section{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 3rem;
+        margin: 4rem 4rem;
+        padding: 1rem;
+    }
+
+    button {
+        padding: 1rem 2rem;
+    }
+    select {
+        border-radius: 8px;
+        padding: 5px 1.5rem;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    h1 {
+        text-align: center;
+        padding: 2rem;
+        font-size: 30px;
+    }
+    header > div {
+        width: 100%;
+        height: 45vh;
+    }
+}
+
+@media screen and (max-width: 1068px) {
+
+    .form-section{
+        padding: 5rem;
+        margin: 4rem 4rem;
+    }
+}
+
+@media screen and (max-width: 564px) {
+
+    .form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form-section{
+        padding: 2rem;
+        margin: 4rem 0rem;
+    }
+}
+
+.result-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: rgba(250, 235, 215, 0.401);
+    border-radius: 25px;
+    padding: 1rem;
+}
+
+.anime-img {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.movie-info {
+    font-size: 20px;
+}
+
+.season, .episodes {
+    padding: 0 1rem;
+}
+
+.synopsis {
+    padding: 1rem 10rem;
+    text-align: center;
+}
+
+.trailer{
+    margin-top: 1rem;
+    width: 50%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 570px) {
+
+    .synopsis {
+        padding: 0 2rem;
+    }
+}
+
+footer {
+    text-align: center;
+    margin: 0 auto;
+    margin: 1rem 0;
+    font-family: cursive;
+}
+
+.no-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: rgba(250, 235, 215, 0.401);
+    padding: 2rem;
+    border-radius: 25px;
+}
