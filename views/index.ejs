@@ -17,33 +17,50 @@
     </header>
 
     <div class="form-section">
-        <form action="" id="form-random" class="form-random" method="">
+        <form action="/random-suggest" id="form-random" class="form-random" method="GET">
             <button type="submit" class="form-submit">Try Random</button>
         </form>
     
-        <form action="" id="form" class="form" method="POST">
+        <form action="/type-suggestion" id="form" class="form" method="POST">
             <label for="film-type"></label>
             <select name="type" id="film-type" class="film-type">
-                <option value="volvo" class="option">Volvo</option>
+                <% if(locals.type){ %>
+                <% type.forEach(element => { %>
+                    <option value="<%= element %>"><%= element %></option>
+                  <% }); %>
+                  <% } %>
             </select>
             <button type="submit" class="form-submit">Find</button>
         </form>
     </div>
 
+    <% if (locals.data){ %>
+
     <div class="result-section">
-        <img class="anime-img" src="./assests/backgorund.jpg" alt="poster">
-        <h2 class="anime-name">Animenin Adı</h2>
+        <img class="anime-img" src=<%= data.poster_img_url || "Unknown" %> alt="poster">
+        <h2 class="anime-name"><%= data.name || "Unknown"%></h2>
+        <p>Year: <%= data.year || "Unknown" %></p>
         <div class="movie info">
-            <span class="season">Season: 3</span>
-            <span class="episodes">Episodes: 15</span>
+            <span class="season">Season: <%= data.season || "Unknown" %></span>
+            <span class="episodes">Episodes: <%= data.episodes || "Unknown" %></span>
         </div>
-        <p class="synopsis">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias est quae, eius tenetur, doloribus incidunt, voluptatem sunt reprehenderit iste ratione natus repudiandae hic voluptas tempora dolores mollitia blanditiis in temporibus.</p>
-        <iframe src="https://www.youtube.com/embed/PE6HBvwxGO4?autoplay=1" class="trailer"></iframe>
+        <p class="synopsis"><%= data.synopsis || "Unknown"%></p>
+
+        <% if (data.trailer_url) { %>
+            <iframe src="https://www.youtube.com/embed/<%= data.trailer_url %>" class="trailer"></iframe>
+        <% } else { %>
+            <p>No trailer available.</p>
+        <% } %>
+
     </div>
 
+    <% }else{ %>
     <h2 class="no-content">If you can't find anything to watch, press one of the buttons and find a random anime!</h2>
+    <% } %>
 
-    <footer>© 2024 December Duygu Kara</footer>
+    <% const date = new Date(); %>
+    <% const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]; %>
+    <footer>© <%= date.getFullYear()%> <%= months[date.getMonth()] %> Duygu Kara</footer>
     
 </body>
 </html>
